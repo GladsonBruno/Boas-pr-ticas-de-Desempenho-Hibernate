@@ -8,7 +8,7 @@ Um problema comum é encontrarmos algo como o exemplo abaixo:
 @OneToMany(fetch = FetchType.EAGER)
 ```
 
-O **FetchType.EAGER** quando utilizado carrega todos os relacionamentos de uma entidade específica, em entidades que não possuem muitos relacionamentos isso não um grande problema, porém quando a entidade possui um grande número de relacionamentos isso pode se tornar um problema de desempenho na aplicação.
+O **FetchType.EAGER** quando utilizado carrega todos os relacionamentos de uma entidade específica, em entidades que não possuem muitos relacionamentos isso não é um grande problema, porém quando a entidade possui um grande número de relacionamentos isso pode se tornar um problema de desempenho na aplicação.
 
 Recomendamos o uso do **FetchType.LAZY** pois o mesmo carrega apenas o necessário da entidade, muitas pessoas não o utilizam para evitar a **LazyInitializationException**, o problema é resolvido de fato, porém a consequência disso é vista diretamente no desempenho da aplicação, para resolver o problema de **LazyInitializationException** utilizando o **FetchType.LAZY** verifique este [artigo]( https://thoughts-on-java.org/lazyinitializationexception/ ).
 
@@ -16,7 +16,7 @@ Recomendamos o uso do **FetchType.LAZY** pois o mesmo carrega apenas o necessár
 
 O principal problema da definição do **FetchType** é que você pode definir apenas um por relacionamento.
 
-Para contornar este problema e ao mesmo tempo não utilizar o **FetchType.EAGER** para realizar as consultas você tem duas opções:
+Para contornar este problema e ao mesmo tempo **NÃO** utilizar o **FetchType.EAGER** para nos relacionamentos você tem duas opções:
 
 *  Você pode fazer isso como parte de sua instrução JPQL usando FETCH JOIN em vez de JOIN. A palavra-chave FETCH adicional informa ao Hibernate não apenas para unir as duas entidades na consulta, mas também para buscar as entidades relacionadas no banco de dados. Exemplo:
 
