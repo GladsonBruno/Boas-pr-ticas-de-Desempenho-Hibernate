@@ -1,0 +1,1 @@
+Boas práticas de desempenho para Hibernate com JPA
