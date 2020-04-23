@@ -132,7 +132,7 @@ public void testeDelecao() {
 	    return post1.getId();
 	});
 		
-	TransactionUtil.doInJPA(() -> emf, entityManager -> {
+	TransactionUtil.doInJPA(() -> entityManagerFactory, entityManager -> {
 	    Tag tag1 = new Tag("Java");
 	    Post post1 = entityManager.find(Post.class, postId);
 	    post1.removeTag(tag1);
