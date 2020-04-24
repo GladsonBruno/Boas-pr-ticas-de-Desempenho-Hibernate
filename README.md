@@ -12,6 +12,7 @@
  * Utilizar [cache de segundo nível](./4_Uso_de_cache_de_segundo_nivel.md) do Hibernate.
  * Utilizar o cache de consulta
  * Utilizar consultas somente leitura.
+ * Agrupar em lotes instruções INSERT/UPDATE que devem ser executadas em massa.
  * Deixar o banco de dados manipular operações pesadas de dados utilizando **Store Procedures** e as chamando na aplicação através de **@NamedStoredProcedureQuery**.
  * [Utilizar **java.util.Set** no lugar de **java.util.List** em relacionamentos de muitos para muitos](2_Melhor_maneira_para_uso_da_anotacao_ManyToMany_com_JPA.md).
 
